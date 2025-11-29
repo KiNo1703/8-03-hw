@@ -86,6 +86,7 @@ pg_dump создаёт дамп базы данных — файл с SQL-ком
 
 
 `pg_dump -Fc mydatabase > mydatabase_backup.dump`
+
 -Fc — формат вывода custom.
 
 Создание сжатого дампа в пользовательском формате с указанием хоста и пользователя:
@@ -117,12 +118,14 @@ pg_restore используется для восстановления из д�
 
  Затем восстанавливаем в нее из дампа
 `pg_restore -h localhost -U myuser -d new_database mydatabase_backup.dump`
+
 -d new_database — указывает, в какую базу данных производить восстановление.
 
 Восстановление с параллельными jobs для ускорения:
 
 
 `pg_restore -h localhost -U myuser -d new_database -j 4 mydatabase_backup.dump`
+
 -j 4 — использует 4 параллельных процесса для восстановления.
 
 Восстановление только структуры данных (без данных):
