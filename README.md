@@ -129,12 +129,15 @@ pg_restore используется для восстановления из д�
 -j 4 — использует 4 параллельных процесса для восстановления.
 
 Восстановление только структуры данных (без данных):
+
 `pg_restore -h localhost -U myuser -d newdatabase --schema-only mydatabase_backup.dump`
 
 Восстановление только данных (в уже существующую структуру):
+
 `pg_restore -h localhost -U myuser -d newdatabase --data-only mydatabase_backup.dump`
 
 Просмотр содержимого дампа (что в нем находится):
+
 `pg_restore --list mydatabase_backup.dump`
 
 ## Итог
