@@ -70,30 +70,31 @@ pg_dump создаёт дамп базы данных — файл с SQL-ком
 
 Синтаксис:
 
-bash
-
-'pg_dump [ОПЦИИ] [ИМЯ_БАЗЫ_ДАННЫХ]'
+`bash`
+`pg_dump [ОПЦИИ] [ИМЯ_БАЗЫ_ДАННЫХ]`
 
 Практические примеры:
 
 Создание простого дампа в формате SQL:
 Создаёт текстовый файл с SQL-командами.
 
-bash
-pg_dump mydatabase > mydatabase_backup.sql
+`bash`
+`pg_dump mydatabase > mydatabase_backup.sql`
+
 Создание дампа в пользовательском (custom) формате:
 Это гибкий формат, поддерживающий сжатие, параллельное восстановление и выборочное восстановление. Это рекомендуемый вариант для большинства случаев.
 
-bash
-pg_dump -Fc mydatabase > mydatabase_backup.dump
+`bash`
+`pg_dump -Fc mydatabase > mydatabase_backup.dump`
 -Fc — формат вывода custom.
 
 Создание сжатого дампа в пользовательском формате с указанием хоста и пользователя:
 
-bash
-pg_dump -h localhost -U myuser -Fc mydatabase > mydatabase_backup.dump
+`bash`
+`pg_dump -h localhost -U myuser -Fc mydatabase > mydatabase_backup.dump`
+
 Создание дампа всей кластера баз данных (всех БД) с помощью pg_dumpall:
 Это полезно для резервного копирования глобальных объектов (ролей, прав), но для больших БД лучше делать дампы по отдельности.
 
-bash
-pg_dumpall > cluster_backup.sql
+`bash`
+`pg_dumpall > cluster_backup.sql`
